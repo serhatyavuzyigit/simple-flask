@@ -35,7 +35,7 @@ def get_student(id):
     student = Student.query.get_or_404(id)
     return {'name': student.name, 'number': student.number, 'description': student.description}
 
-@app.route('/drinks', methods=['POST'])
+@app.route('/students', methods=['POST'])
 def add_student():
     student = Student(name=request.json['name'], number=request.json['number'], description=request.json['description'])
     db.session.add(student)
